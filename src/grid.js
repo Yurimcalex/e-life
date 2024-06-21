@@ -1,4 +1,5 @@
 import Vector from './vector.js';
+import directions from './directions.js';
 
 function Grid(width, height) {
 	this.space = new Array(width * height);
@@ -28,7 +29,7 @@ Grid.prototype.forEach = function (f, context) {
 			}
 		}
 	}
-}
+};
 
 Grid.prototype.letAct = function (critter, vector) {
 	var action = critter.act(new View(this, vector));
@@ -39,6 +40,15 @@ Grid.prototype.letAct = function (critter, vector) {
 			this.grid.set(dest, critter);
 		}
 	}
-}
+};
+
+World.prototype.checkDestination = function (action, vector) {
+	if (directions.hasOwnProperty(action.direction)) {
+		var dest = vector.plus(directions[action.direction]);
+		if (this.grid.isInside(dest)) {
+			return dest;
+		}
+	}
+};
 
 export default Grid;
