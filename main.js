@@ -1,2 +1,4 @@
 import './style.css'
-console.log('OK!');
+import plan from './src/plan.js';
+
+console.log(plan);
