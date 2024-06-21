@@ -4,17 +4,14 @@ import Vector from './src/vector.js';
 import Grid from './src/grid.js';
 import directions from './src/directions.js';
 import BouncingCritter from './src/bouncingCritter.js';
+import World from './src/world.js';
 
-console.log(plan);
+var world = new World(plan, {
+  '#': Wall,
+  'o': BouncingCritter
+});
 
-var v = new Vector(1, 2);
-var v2 = v.plus(new Vector(1, 1));
+console.log(world.toString());
 
-console.log(v, v2);
 
-var grid = new Grid(5, 5);
-console.log(grid.get(new Vector(1, 1)));
-grid.set(new Vector(1, 1), 'X');
-console.log(grid.get(new Vector(1, 1)));
-
-console.log(directions);
+function Wall() {}
