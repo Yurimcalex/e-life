@@ -4,6 +4,7 @@ import Vector from './src/vector.js';
 import Grid from './src/grid.js';
 import directions from './src/directions.js';
 import BouncingCritter from './src/bouncingCritter.js';
+import Wall from './src/wall.js';
 import World from './src/world.js';
 
 var world = new World(plan, {
@@ -12,6 +13,3 @@ var world = new World(plan, {
 });
 
 console.log(world.toString());
-
-
-function Wall() {}
