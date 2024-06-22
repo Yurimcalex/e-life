@@ -12,4 +12,13 @@ var world = new World(plan, {
   'o': BouncingCritter
 });
 
-console.log(world.toString());
+
+// let counter = 0;
+// let timer = setInterval(() => {
+
+// }, 1000);
+
+for (var i = 0; i < 5; i += 1) {
+  world.turn();
+  console.log(world.toString());
+}

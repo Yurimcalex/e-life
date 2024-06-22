@@ -1,5 +1,7 @@
 import Grid from './grid.js';
 import Vector from './vector.js';
+import View from './view.js';
+import directions from './directions.js';
 
 function World(map, legend) {
 	var grid = new Grid(map[0].length, map.length);
@@ -33,6 +35,26 @@ World.prototype.turn = function () {
 			this.letAct(critter, vector);
 		}
 	}, this);
+};
+
+World.prototype.letAct = function (critter, vector) {
+	var action = critter.act(new View(this, vector));
+	if (action && action.type == 'move') {
+		var dest = this.checkDestination(action, vector);
+		if (dest && this.grid.get(dest) == null) {
+			this.grid.set(vector, null);
+			this.grid.set(dest, critter);
+		}
+	}
+};
+
+World.prototype.checkDestination = function (action, vector) {
+	if (directions.hasOwnProperty(action.direction)) {
+		var dest = vector.plus(directions[action.direction]);
+		if (this.grid.isInside(dest)) {
+			return dest;
+		}
+	}
 };
 
 

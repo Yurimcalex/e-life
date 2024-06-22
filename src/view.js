@@ -31,3 +31,5 @@ View.prototype.find = function (ch) {
 	if (found.length == 0) return null;
 	return randomElement(found);
 };
+
+export default View;
