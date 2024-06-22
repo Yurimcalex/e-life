@@ -29,4 +29,31 @@ LifelikeWorld.prototype.letAct = function (critter, vector) {
 actionTypes.grow = function (critter) {
 	critter.energy += 0.5;
 	return true;
-}
+};
+
+actionTypes.move = function (critter, vector, action) {
+	var dest = this.checkDestination(action, vector);
+	if (!dest || 
+			critter.energy <= 1 ||
+			this.grid.get(dest) != null) {
+
+		return false;
+	}
+
+	critter.energy -= 1;
+	this.grid.set(vector, null);
+	this.grid.set(dest, critter);
+	return true;
+};
+
+actionTypes.eat = function (critter, vector, action) {
+	var dest = this.checkDestination(action, vector);
+	var atDest = dest && this.grid.get(dest);
+	if (!atDest || !atDest.energy) {
+		return false;
+	}
+
+	critter.energy += atDest.energy;
+	this.grid.set(dest, null);
+	return true;
+};
