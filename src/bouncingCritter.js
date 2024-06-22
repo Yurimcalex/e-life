@@ -14,7 +14,7 @@ BouncingCritter.prototype.act = function (view) {
 };
 
 
-function randomElement(array) {
+export function randomElement(array) {
 	return array[Math.floor(Math.random() * array.length)];
 }
 

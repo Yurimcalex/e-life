@@ -47,7 +47,7 @@ function elementFromChar(legend, ch) {
 }
 
 
-function charFromElement(element) {
+export function charFromElement(element) {
 	if (element == null) {
 		return ' ';
 	} else {
