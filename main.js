@@ -12,13 +12,17 @@ var world = new World(plan, {
   'o': BouncingCritter
 });
 
+var app = document.getElementById('world-str');
+app.innerHTML = world.toString();
+
 
 var counter = 0;
 var turnsAmount = 10;
 var timer = setInterval(() => {
   if (counter == turnsAmount) clearInterval(timer);
-  console.clear();
+  //console.clear();
   world.turn();
-  console.log(world.toString());
+  //console.log(world.toString());
+  app.innerHTML = world.toString();
   counter += 1;
 }, 500);
