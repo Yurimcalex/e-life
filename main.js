@@ -13,12 +13,12 @@ var world = new World(plan, {
 });
 
 
-// let counter = 0;
-// let timer = setInterval(() => {
-
-// }, 1000);
-
-for (var i = 0; i < 5; i += 1) {
+var counter = 0;
+var turnsAmount = 10;
+var timer = setInterval(() => {
+  if (counter == turnsAmount) clearInterval(timer);
+  console.clear();
   world.turn();
   console.log(world.toString());
-}
+  counter += 1;
+}, 500);
