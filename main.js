@@ -45,9 +45,11 @@ var worlds = [
 
 
 var world;
+var wInd = 0;
 var app = document.getElementById('world-str');
 
-createWorld(worlds[0])
+
+createWorld(worlds[wInd]);
 app.innerHTML = world.toString();
 
 
@@ -60,6 +62,12 @@ stopBtn.onclick = function () {
 		clearInterval(timer);
 		timer = null;
 	}
+};
+restartBtn.onclick = function () {
+	if (timer) stopBtn.click();
+	createWorld(worlds[wInd]);
+	app.innerHTML = world.toString();
+	startBtn.click();
 };
 
 
