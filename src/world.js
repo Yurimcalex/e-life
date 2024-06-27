@@ -58,7 +58,7 @@ World.prototype.checkDestination = function (action, vector) {
 };
 
 
-function elementFromChar(legend, ch) {
+export function elementFromChar(legend, ch) {
 	if (ch == ' ') {
 		return null;
 	}
