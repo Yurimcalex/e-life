@@ -45,7 +45,7 @@ var worlds = [
 
 
 var world;
-var wInd = 0;
+var wInd = 2;
 var app = document.getElementById('world-str');
 
 
@@ -69,6 +69,25 @@ restartBtn.onclick = function () {
 	app.innerHTML = world.toString();
 	startBtn.click();
 };
+selectWorld.onchange = function () {
+	wInd = parseInt(this.value);
+	if (timer) stopBtn.click();
+	createWorld(worlds[wInd]);
+	app.innerHTML = world.toString();
+};
+
+createSelectOptions();
+selectWorld.selectedIndex = wInd;
+
+
+function createSelectOptions() {
+	for (var i = 0; i < worlds.length; i += 1) {
+		var option = document.createElement('option');
+		option.value = i;
+		option.innerHTML = 'world' + ' ' + i;
+		selectWorld.appendChild(option);
+	}
+}
 
 
 function createWorld(options) {
