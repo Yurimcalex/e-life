@@ -6,9 +6,12 @@ import Wall from './src/wall.js';
 import World from './src/world.js';
 
 import valleyPlan from './src/valleyPlan.js';
+import { replaceChar } from './src/extension/utils.js';
 import LifelikeWorld from './src/lifeLikeWorld.js';
 import Plant from './src/plantCritter.js';
 import PlantEater from './src/plantEaterCritter.js';
+import SavyEater from './src/extension/critters/plantEater_1.js';
+
 
 var world = new World(plan, {
   '#': Wall,
@@ -22,8 +25,17 @@ var valley = new LifelikeWorld(valleyPlan, {
 	'*': Plant
 });
 
+var valley1 = new LifelikeWorld(
+	replaceChar(valleyPlan, '0', 'D'),
+	{
+		'#': Wall,
+		'D': SavyEater,
+		'*': Plant
+	}
+);
 
-var w = valley;
+
+var w = valley1;
 
 var app = document.getElementById('world-str');
 app.innerHTML = world.toString();
