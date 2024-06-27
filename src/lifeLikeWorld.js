@@ -26,6 +26,7 @@ LifelikeWorld.prototype.letAct = function (critter, vector) {
 	}
 };
 
+export default LifelikeWorld;
 
 actionTypes.grow = function (critter) {
 	critter.energy += 0.5;

@@ -14,3 +14,5 @@ Plant.prototype.act = function (context) {
 		return {type: 'grow'};
 	}
 };
+
+export default Plant;
