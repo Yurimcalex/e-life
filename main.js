@@ -36,16 +36,23 @@ var valley1 = new LifelikeWorld(
 
 
 var w = valley1;
-
 var app = document.getElementById('world-str');
-app.innerHTML = world.toString();
+app.innerHTML = w.toString();
 
+var timer;
+startBtn.onclick = function () {
+	if (!timer) render();
+};
+stopBtn.onclick = function () {
+	if (timer) {
+		clearInterval(timer);
+		timer = null;
+	}
+};
 
-var counter = 0;
-var turnsAmount = 100;
-var timer = setInterval(() => {
-  if (counter == turnsAmount) clearInterval(timer);
-  w.turn();
-  app.innerHTML = w.toString();
-  counter += 1;
-}, 500);
+function render() {
+	timer = setInterval(() => {
+	  app.innerHTML = w.toString();
+	  w.turn();
+	}, 500);
+}
