@@ -19,7 +19,7 @@ import { replaceChar, randomPlaceChar } from '../utils.js';
 let worlds = [
 	{
 		world: World,
-		plan: FirstPlan,
+		plan: [...FirstPlan],
 		legend: {
 			'#': Wall,
 			'o': BouncingCritter,
@@ -28,7 +28,7 @@ let worlds = [
 	},
 	{
 		world: LifelikeWorld,
-		plan: valleyPlan,
+		plan: [...valleyPlan],
 		legend: {
 			'#': Wall,
 			'0': PlantEater,
@@ -37,7 +37,7 @@ let worlds = [
 	},
 	{
 		world: LifelikeWorld,
-		plan: replaceChar(valleyPlan, '0', 'D'),
+		plan: replaceChar([...valleyPlan], '0', 'D'),
 		legend: {
 			'#': Wall,
 			'D': SavyEater,
@@ -46,7 +46,7 @@ let worlds = [
 	},
 	{
 		world: LifelikeWorld,
-		plan: randomPlaceChar(emptyPlan, 'E'),
+		plan: randomPlaceChar([...emptyPlan], 'E'),
 		legend: {
 			'#': Wall,
 			'E': SavyMovingEater
@@ -54,7 +54,7 @@ let worlds = [
 	},
 	{
 		world: LifelikeWorld,
-		plan: replaceChar(valleyPlan, '0', 'E'),
+		plan: replaceChar([...valleyPlan], '0', 'E'),
 		legend: {
 			'#': Wall,
 			'E': SavyMovingEater,
