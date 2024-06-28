@@ -1,0 +1,17 @@
+html {
+  background: lightgray;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.wrapper {
+  margin-top: 30px;
+  text-align: center;
+}
+
+pre {
+  display: inline-block;
+}
