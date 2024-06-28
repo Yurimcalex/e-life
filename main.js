@@ -12,6 +12,10 @@ import Plant from './src/plantCritter.js';
 import PlantEater from './src/plantEaterCritter.js';
 import SavyEater from './src/extension/critters/plantEater_1.js';
 
+import { emptyPlan } from './src/extension/plans/test.js';
+import { randomPlaceChar } from './src/extension/utils.js';
+import SavyMovingEater from './src/extension/critters/plantEater_2.js';
+
 
 var worlds = [
 	{
@@ -39,6 +43,14 @@ var worlds = [
 			'#': Wall,
 			'D': SavyEater,
 			'*': Plant
+		}
+	},
+	{
+		world: LifelikeWorld,
+		plan: randomPlaceChar(emptyPlan, 'E'),
+		legend: {
+			'#': Wall,
+			'E': SavyMovingEater
 		}
 	}
 ];
