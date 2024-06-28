@@ -6,17 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>E-life</title>
   </head>
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+    }
+
+    .wrapper {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    pre {
+      display: inline-block;
+    }
+  </style>
   <body>
-    <div>
-      <pre id="world-str"></pre>
-    </div>
-    <div>
-      <button id="startBtn">Start</button>
-      <button id="stopBtn">Stop</button>
-      <button id=restartBtn>Restart</button>
-      <select id="selectWorld">
-        
-      </selectn>
+    <div class="wrapper">
+      <div>
+        <pre id="world-str"></pre>
+      </div>
+      <div>
+        <button id="startBtn">Start</button>
+        <button id="stopBtn">Stop</button>
+        <button id=restartBtn>Restart</button>
+        <select id="selectWorld"></selectn>
+      </div>
     </div>
     <script type="module" src="/main.js"></script>
   </body>
