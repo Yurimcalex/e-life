@@ -29,6 +29,11 @@ export function placeChar(plan, ch, point) {
 };
 
 
+export function randomElement(array) {
+	return array[Math.floor(Math.random() * array.length)];
+}
+
+
 function randomInteger(min, max) {
   let rand = min + Math.random() * (max + 1 - min);
   return Math.floor(rand);
