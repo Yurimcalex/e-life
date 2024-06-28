@@ -1,9 +1,10 @@
 import './style.css'
 import worlds from './src/extension/worlds/worlds.js';
+import { saveItem, getItem } from './src/extension/storage.js';
 
 
 var world;
-var wInd = 2;
+var wInd = getItem('worldIndex') || 0;
 var app = document.getElementById('world-str');
 
 
@@ -32,6 +33,7 @@ selectWorld.onchange = function () {
 	if (timer) stopBtn.click();
 	createWorld(worlds[wInd]);
 	app.innerHTML = world.toString();
+	saveItem('worldIndex', wInd);
 };
 
 createSelectOptions();
