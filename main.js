@@ -52,6 +52,15 @@ var worlds = [
 			'#': Wall,
 			'E': SavyMovingEater
 		}
+	},
+	{
+		world: LifelikeWorld,
+		plan: replaceChar(valleyPlan, '0', 'E'),
+		legend: {
+			'#': Wall,
+			'E': SavyMovingEater,
+			'*': Plant
+		}
 	}
 ];
 
