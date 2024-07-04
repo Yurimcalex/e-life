@@ -1,6 +1,7 @@
 import './style.css'
 import worlds from './src/extension/worlds/worlds.js';
 import Controller from './src/extension/controller.js';
+import { getItem } from './src/extension/storage.js';
 
 
 const view = document.getElementById('world-str');
@@ -34,6 +35,7 @@ function createSelectOptions(worlds) {
 		option.innerHTML = 'world' + ' ' + i;
 		selectWorld.appendChild(option);
 	});
+	selectWorld.selectedIndex = getItem('worldIndex') || 0;
 }
 
 function run(world, view) {
