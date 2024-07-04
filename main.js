@@ -27,9 +27,10 @@ selectWorld.addEventListener('change', (e) => {
 
 function getDescription(worldSchema) {
 	const { world, legend } = worldSchema;
+	console.log(`------------- world #${selectWorld.selectedIndex} -------------`);
 	console.log(world.description);
-	let critters = Object.values(legend);
-	critters.forEach(c => console.log(c.description));
+	let critters = Object.entries(legend);
+	critters.forEach(([ch, c]) => console.log(`${ch} - ${c.description}`));
 }
 
 
