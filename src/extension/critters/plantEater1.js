@@ -1,7 +1,7 @@
 import PlantEater from '../../plantEaterCritter.js';
 
 // It eats only if it is hungry
-class PlantEater_1 extends PlantEater {
+class PlantEater1 extends PlantEater {
 	eat(view) {
 		let plant = view.find('*');
 		if (plant && this.energy < 80) {
@@ -10,4 +10,4 @@ class PlantEater_1 extends PlantEater {
 	}
 }
 
-export default PlantEater_1;
+export default PlantEater1;
