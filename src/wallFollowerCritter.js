@@ -1,3 +1,5 @@
+var description = 'This critter moves along the walls.';
+
 function WallFollower() {
 	this.dir = 's';
 }
@@ -15,6 +17,8 @@ WallFollower.prototype.act = function (view) {
 
 	return {type: 'move', direction: this.dir};
 };
+
+WallFollower.description = description;
 
 
 var directionNames = 'n ne e se s sw n nw'.split(' ');
