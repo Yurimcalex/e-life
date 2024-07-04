@@ -1,3 +1,8 @@
+var description = 'A plant eater can move, eat and reproduce.' + 
+'It moves in random direction.' + 
+'It can eat plants only.' + 
+'If its energy level more than 60 points and there is a spot it gets reproduced.';
+
 function PlantEater() {
 	this.energy = 20;
 }
@@ -44,5 +49,7 @@ PlantEater.prototype.move = function (context) {
 		return {type: 'move', direction: space};
 	}
 };
+
+PlantEater.description = description;
 
 export default PlantEater;
