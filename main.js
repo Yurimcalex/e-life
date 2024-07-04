@@ -18,6 +18,20 @@ const renderTime = 500;
 controller.init();
 createSelectOptions(worlds);
 
+getDescription(worlds[selectWorld.selectedIndex]);
+selectWorld.addEventListener('change', (e) => {
+	const ind = e.target.selectedIndex;
+	getDescription(worlds[ind]);
+});
+
+
+function getDescription(worldSchema) {
+	const { world, legend } = worldSchema;
+	console.log(world.description);
+	let critters = Object.values(legend);
+	critters.forEach(c => console.log(c.description));
+}
+
 
 function updateView(world, view) {
 	view.innerHTML = world.toString();
