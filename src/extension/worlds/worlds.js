@@ -17,10 +17,11 @@ import { replaceChar, randomPlaceChar } from '../utils.js';
 
 
 import world1 from './world1.js';
+import world2 from './world2.js';
 
 
 
-let worlds = [ world1 ];
+let worlds = [ world1, world2 ];
 
 // let worlds = [
 // 	{
