@@ -35,8 +35,11 @@ function createSelectOptions(worlds) {
 }
 
 function run(world, view) {
+	world.turn();
+	updateView(world, view);
+	
 	return setInterval(() => {
 	  updateView(world, view);
 	  world.turn();
-	}, 500);
+	}, 2000);
 }
