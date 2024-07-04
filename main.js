@@ -12,6 +12,8 @@ const controller = new Controller(
 	run
 );
 
+const renderTime = 500;
+
 controller.init();
 createSelectOptions(worlds);
 
@@ -37,9 +39,9 @@ function createSelectOptions(worlds) {
 function run(world, view) {
 	world.turn();
 	updateView(world, view);
-	
+
 	return setInterval(() => {
 	  updateView(world, view);
 	  world.turn();
-	}, 2000);
+	}, renderTime);
 }
