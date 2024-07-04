@@ -1,6 +1,8 @@
 import PlantEater from '../../plantEaterCritter.js';
 
-// It eats only if it is hungry
+const description = 'It inherits all the props from Plant Eater and defines its own eat action.' + 
+'It eats only if it is hungry - the energy level is less than 80 points.';
+
 class PlantEater1 extends PlantEater {
 	eat(view) {
 		let plant = view.find('*');
@@ -9,5 +11,7 @@ class PlantEater1 extends PlantEater {
 		}
 	}
 }
+
+PlantEater1.description = description;
 
 export default PlantEater1;
