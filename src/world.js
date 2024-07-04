@@ -3,6 +3,8 @@ import Vector from './vector.js';
 import View from './view.js';
 import directions from './directions.js';
 
+var description = 'A simple world without control over creatures.';
+
 function World(map, legend) {
 	var grid = new Grid(map[0].length, map.length);
 	this.grid = grid;
@@ -56,6 +58,8 @@ World.prototype.checkDestination = function (action, vector) {
 		}
 	}
 };
+
+World.description = description;
 
 
 export function elementFromChar(legend, ch) {
