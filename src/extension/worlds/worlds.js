@@ -16,51 +16,57 @@ import SavyMovingEater from '../critters/plantEater_2.js';
 import { replaceChar, randomPlaceChar } from '../utils.js';
 
 
-let worlds = [
-	{
-		world: World,
-		plan: [...FirstPlan],
-		legend: {
-			'#': Wall,
-			'o': BouncingCritter,
-			'w': WallFollower
-		}
-	},
-	{
-		world: LifelikeWorld,
-		plan: [...valleyPlan],
-		legend: {
-			'#': Wall,
-			'0': PlantEater,
-			'*': Plant
-		}
-	},
-	{
-		world: LifelikeWorld,
-		plan: replaceChar([...valleyPlan], '0', 'D'),
-		legend: {
-			'#': Wall,
-			'D': SavyEater,
-			'*': Plant
-		}
-	},
-	{
-		world: LifelikeWorld,
-		plan: randomPlaceChar([...emptyPlan], 'E'),
-		legend: {
-			'#': Wall,
-			'E': SavyMovingEater
-		}
-	},
-	{
-		world: LifelikeWorld,
-		plan: replaceChar([...valleyPlan], '0', 'E'),
-		legend: {
-			'#': Wall,
-			'E': SavyMovingEater,
-			'*': Plant
-		}
-	}
-];
+import world1 from './world1.js';
+
+
+
+let worlds = [ world1 ];
+
+// let worlds = [
+// 	{
+// 		world: World,
+// 		plan: [...FirstPlan],
+// 		legend: {
+// 			'#': Wall,
+// 			'o': BouncingCritter,
+// 			'w': WallFollower
+// 		}
+// 	},
+// 	{
+// 		world: LifelikeWorld,
+// 		plan: [...valleyPlan],
+// 		legend: {
+// 			'#': Wall,
+// 			'0': PlantEater,
+// 			'*': Plant
+// 		}
+// 	},
+// 	{
+// 		world: LifelikeWorld,
+// 		plan: replaceChar([...valleyPlan], '0', 'D'),
+// 		legend: {
+// 			'#': Wall,
+// 			'D': SavyEater,
+// 			'*': Plant
+// 		}
+// 	},
+// 	{
+// 		world: LifelikeWorld,
+// 		plan: randomPlaceChar([...emptyPlan], 'E'),
+// 		legend: {
+// 			'#': Wall,
+// 			'E': SavyMovingEater
+// 		}
+// 	},
+// 	{
+// 		world: LifelikeWorld,
+// 		plan: replaceChar([...valleyPlan], '0', 'E'),
+// 		legend: {
+// 			'#': Wall,
+// 			'E': SavyMovingEater,
+// 			'*': Plant
+// 		}
+// 	}
+// ];
 
 export default worlds;
