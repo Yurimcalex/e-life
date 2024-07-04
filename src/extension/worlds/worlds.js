@@ -11,7 +11,7 @@ import WallFollower from '../../wallFollowerCritter.js';
 import Plant from '../../plantCritter.js';
 import PlantEater from '../../plantEaterCritter.js';
 //import SavyEater from '../critters/plantEater_1.js';
-import SavyMovingEater from '../critters/plantEater_2.js';
+//import SavyMovingEater from '../critters/plantEater_2.js';
 
 import { replaceChar, randomPlaceChar } from '../utils.js';
 
@@ -19,10 +19,11 @@ import { replaceChar, randomPlaceChar } from '../utils.js';
 import world1 from './world1.js';
 import world2 from './world2.js';
 import world3 from './world3.js';
+import world4 from './world4.js';
 
 
 
-let worlds = [ world1, world2, world3 ];
+let worlds = [ world1, world2, world3, world4 ];
 
 // let worlds = [
 // 	{

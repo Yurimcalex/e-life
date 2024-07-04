@@ -7,7 +7,7 @@ import { randomElement } from '../utils.js';
 //If it was moving vertically it starts moving horizontally in random direction.
 //If by this time there is no direction the direction chose randomly vertical or horizontal.
 
-class PlantEater_2 extends PlantEater {
+class PlantEater2 extends PlantEater {
 	dir = 'w';
 
 	move(view) {
@@ -49,4 +49,4 @@ class PlantEater_2 extends PlantEater {
 	}
 }
 
-export default PlantEater_2;
+export default PlantEater2;
