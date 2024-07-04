@@ -25,7 +25,7 @@ export default class Controller {
 		this.startBtn.onclick = this.start.bind(this);
 		this.stopBtn.onclick = this.stop.bind(this);
 		this.restartBtn.onclick = this.restart.bind(this);
-		this.selectBtn.onchange = (e) => this.selectWorld(e);
+		this.selectBtn.addEventListener('change', (e) => this.selectWorld(e));
 	}
 
 	start() {
