@@ -25,3 +25,15 @@ body {
 .view pre {
 	margin: 0;
 }
+
+.controls {
+	display: flex;
+	flex-direction: column;
+	margin-right: 30px;
+}
+
+.controls > * {
+	margin: 5px;
+	padding: 5px;
+	cursor: pointer;
+}
