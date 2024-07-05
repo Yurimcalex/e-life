@@ -4,19 +4,53 @@ import Controller from './src/extension/controller.js';
 import { getItem } from './src/extension/storage.js';
 
 
-const view = document.getElementById('world-str');
-const controller = new Controller(
-	worlds,
-	createWorld,
-	view,
-	updateView,
-	run
-);
+class Main {
+	constructor(worlds) {
+		this.display = document.getElementById('world-str');
+		this.worlds = worlds;
+		this.world;
+		this.renderTime = 500;
 
-const renderTime = 500;
+		this.update = this.update.bind(this);
+		this.run = this.run.bind(this);
+	}
 
-controller.init();
+	init(worldN) {
+		this.createWorld(this.worlds[worldN]);
+		this.updateDisplay();
+	}
+
+	updateDisplay() {
+		this.display.innerHTML = this.world.toString();
+	}
+
+	createWorld(options) {
+		const {world, plan, legend} = options;
+		this.world = new world(plan, legend);
+	}
+
+	update(worldN) {
+		this.createWorld(this.worlds[worldN]);
+		this.updateDisplay();
+	}
+
+	run() {
+		this.world.turn();
+		this.updateDisplay();
+
+		return setInterval(() => {
+			this.world.turn();
+			this.updateDisplay();
+		}, this.renderTime);
+	}
+}
+
+
 createSelectOptions(worlds);
+const main = new Main(worlds);
+main.init(selectWorld.selectedIndex);
+const controller = new Controller(main.update, main.run);
+controller.init();
 
 getDescription(worlds[selectWorld.selectedIndex]);
 selectWorld.addEventListener('change', (e) => {
@@ -34,15 +68,6 @@ function getDescription(worldSchema) {
 }
 
 
-function updateView(world, view) {
-	view.innerHTML = world.toString();
-}
-
-function createWorld(options) {
-	const {world, plan, legend} = options;
-	return new world(plan, legend);
-}
-
 function createSelectOptions(worlds) {
 	worlds.forEach((_w, i) => {
 		const option = document.createElement('option');
@@ -51,14 +76,4 @@ function createSelectOptions(worlds) {
 		selectWorld.appendChild(option);
 	});
 	selectWorld.selectedIndex = getItem('worldIndex') || 0;
-}
-
-function run(world, view) {
-	world.turn();
-	updateView(world, view);
-
-	return setInterval(() => {
-	  updateView(world, view);
-	  world.turn();
-	}, renderTime);
 }
