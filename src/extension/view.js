@@ -1,11 +1,10 @@
 import { getItem } from './storage.js';
+import Table from './table.js';
 
 export default class View {
 	constructor(worldsAmount) {
 		//this.display = document.getElementById('world-str');
-		this.display = document.querySelector('.view');
-		this.table = null;
-		this.data = '';
+		this.table = new Table();
 		this.selectWorld = document.getElementById('selectWorld');
 		this.descrCont = document.querySelector('.descr-cont');
 		this.worldsAmount = worldsAmount;
@@ -28,13 +27,7 @@ export default class View {
 
 	showData(data) {
 		//this.display.innerHTML = data;
-		if (!this.table) {
-			this.createTable(data);
-			this.data = data;
-		}
-
-		this.updateTable(this.data, data);
-		this.data = data;
+		this.table.render(data);
 	}
 
 	showDescription(description) {
@@ -64,51 +57,5 @@ export default class View {
 			this.selectWorld.appendChild(option);
 		}
 		this.selectWorld.selectedIndex = getItem('worldIndex') || 0;
-	}
-
-	createTable(data) {
-		const table = document.createElement('table');
-		table.className = 'table';
-		table.innerHTML = `
-			${data.split('\n').reduce((acc, row) => {
-				return acc + `<tr>
-					${row.split('').reduce((acc, cell) => {
-						return acc + `<td>${cell}</td>`;
-					}, '')}
-				</tr>` 
-			}, '')}
-		`;
-		
-		this.table = table;
-		this.display.append(table);
-	}
-
-	updateTable(prevData, data) {
-		let rowInd = 0;
-		let colInd = 0;
-		let cellsToUpdate = [];
-
-		for (let i = 0; i < data.length; i += 1) {
-			if (data[i] !== prevData[i]) {
-				cellsToUpdate.push({
-					row: rowInd,
-					col: colInd,
-					text: data[i]
-				});
-			}
-
-			colInd += 1;
-
-			if (data[i] === '\n') {
-				rowInd += 1;
-				colInd = 0;
-			}
-		}
-
-		const rows = this.table.rows;
-		cellsToUpdate.forEach(cd => {
-			const {row, col, text} = cd;
-			rows[row].cells[col].textContent = text;
-		});
 	}
 }
