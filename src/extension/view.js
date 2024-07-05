@@ -4,6 +4,7 @@ export default class View {
 	constructor(worldsAmount) {
 		this.display = document.getElementById('world-str');
 		this.table = null;
+		this.data = '';
 		this.selectWorld = document.getElementById('selectWorld');
 		this.descrCont = document.querySelector('.descr-cont');
 		this.worldsAmount = worldsAmount;
@@ -28,7 +29,11 @@ export default class View {
 		this.display.innerHTML = data;
 		if (!this.table) {
 			this.createTable(data);
+			this.data = data;
 		}
+
+		this.updateTable(this.data, data);
+		this.data = data;
 	}
 
 	showDescription(description) {
@@ -75,5 +80,34 @@ export default class View {
 		
 		this.table = table;
 		document.body.append(table);
+	}
+
+	updateTable(prevData, data) {
+		let rowInd = 0;
+		let colInd = 0;
+		let cellsToUpdate = [];
+
+		for (let i = 0; i < data.length; i += 1) {
+			if (data[i] !== prevData[i]) {
+				cellsToUpdate.push({
+					row: rowInd,
+					col: colInd,
+					text: data[i]
+				});
+			}
+
+			colInd += 1;
+
+			if (data[i] === '\n') {
+				rowInd += 1;
+				colInd = 0;
+			}
+		}
+
+		const rows = this.table.rows;
+		cellsToUpdate.forEach(cd => {
+			const {row, col, text} = cd;
+			rows[row].cells[col].textContent = text;
+		});
 	}
 }
