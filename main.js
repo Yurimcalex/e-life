@@ -1,13 +1,15 @@
 import './style.css'
 import worlds from './src/extension/worlds/worlds.js';
 import Controller from './src/extension/controller.js';
+import View from './src/extension/view.js';
 import { getItem } from './src/extension/storage.js';
 
 
 class Main {
-	constructor(worlds) {
+	constructor(worlds, show) {
 		this.display = document.getElementById('world-str');
 		this.worlds = worlds;
+		this.show = show;
 		this.world;
 		this.renderTime = 500;
 
@@ -21,7 +23,8 @@ class Main {
 	}
 
 	updateDisplay() {
-		this.display.innerHTML = this.world.toString();
+		this.show(this.world.toString());
+		//this.display.innerHTML = this.world.toString();
 	}
 
 	createWorld(options) {
@@ -46,11 +49,15 @@ class Main {
 }
 
 
-createSelectOptions(worlds);
-const main = new Main(worlds);
+const view = new View(worlds.length);
+view.init();
+
+const main = new Main(worlds, view.showData);
 main.init(selectWorld.selectedIndex);
+
 const controller = new Controller(main.update, main.run);
 controller.init();
+
 
 getDescription(worlds[selectWorld.selectedIndex]);
 selectWorld.addEventListener('change', (e) => {
@@ -65,15 +72,4 @@ function getDescription(worldSchema) {
 	console.log(world.description);
 	let critters = Object.entries(legend);
 	critters.forEach(([ch, c]) => console.log(`${ch} - ${c.description}`));
-}
-
-
-function createSelectOptions(worlds) {
-	worlds.forEach((_w, i) => {
-		const option = document.createElement('option');
-		option.value = i;
-		option.innerHTML = 'world' + ' ' + i;
-		selectWorld.appendChild(option);
-	});
-	selectWorld.selectedIndex = getItem('worldIndex') || 0;
 }
