@@ -3,6 +3,7 @@ import { getItem } from './storage.js';
 export default class View {
 	constructor(worldsAmount) {
 		this.display = document.getElementById('world-str');
+		this.table = null;
 		this.selectWorld = document.getElementById('selectWorld');
 		this.descrCont = document.querySelector('.descr-cont');
 		this.worldsAmount = worldsAmount;
@@ -25,11 +26,13 @@ export default class View {
 
 	showData(data) {
 		this.display.innerHTML = data;
+		if (!this.table) {
+			this.createTable(data);
+		}
 	}
 
 	showDescription(description) {
 		//this._logDescription(description);
-		
 		const data = `
 			<h3>world #${description.n}</h3>
 			<p>${description.world}</p>
@@ -55,5 +58,21 @@ export default class View {
 			this.selectWorld.appendChild(option);
 		}
 		this.selectWorld.selectedIndex = getItem('worldIndex') || 0;
+	}
+
+	createTable(data) {
+		const table = document.createElement('table');
+		table.innerHTML = `
+			${data.split('\n').reduce((acc, row) => {
+				return acc + `<tr>
+					${row.split('').reduce((acc, cell) => {
+						return acc + `<td>${cell}</td>`;
+					}, '')}
+				</tr>` 
+			}, '')}
+		`;
+		
+		this.table = table;
+		document.body.append(table);
 	}
 }
