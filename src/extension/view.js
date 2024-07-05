@@ -2,7 +2,8 @@ import { getItem } from './storage.js';
 
 export default class View {
 	constructor(worldsAmount) {
-		this.display = document.getElementById('world-str');
+		//this.display = document.getElementById('world-str');
+		this.display = document.querySelector('.view');
 		this.table = null;
 		this.data = '';
 		this.selectWorld = document.getElementById('selectWorld');
@@ -26,7 +27,7 @@ export default class View {
 	}
 
 	showData(data) {
-		this.display.innerHTML = data;
+		//this.display.innerHTML = data;
 		if (!this.table) {
 			this.createTable(data);
 			this.data = data;
@@ -79,7 +80,7 @@ export default class View {
 		`;
 		
 		this.table = table;
-		document.body.append(table);
+		this.display.append(table);
 	}
 
 	updateTable(prevData, data) {
