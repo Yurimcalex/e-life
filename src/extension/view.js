@@ -7,14 +7,29 @@ export default class View {
 		this.worldsAmount = worldsAmount;
 
 		this.showData = this.showData.bind(this);
+
+		this.getWorldDescription = null;
 	}
 
 	init() {
 		this._createSelectOptions();
+		this.showDescription(
+			this.getWorldDescription(this.selectWorld.selectedIndex)
+		);
+		this.selectWorld.addEventListener('change', (e) => {
+			const descr = this.getWorldDescription(e.target.value);
+			this.showDescription(descr)
+		});
 	}
 
 	showData(data) {
 		this.display.innerHTML = data;
+	}
+
+	showDescription(description) {
+		console.log(`------------- world #${description.n} -------------`);
+		console.log(description.world);
+		description.legend.forEach(([ch, descr]) => console.log(`${ch} - ${descr}`));
 	}
 
 	_createSelectOptions() {
