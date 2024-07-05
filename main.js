@@ -15,6 +15,7 @@ class Main {
 
 		this.update = this.update.bind(this);
 		this.run = this.run.bind(this);
+		this.getWorldDescription = this.getWorldDescription.bind(this);
 	}
 
 	init(worldN) {
@@ -24,12 +25,22 @@ class Main {
 
 	updateDisplay() {
 		this.show(this.world.toString());
-		//this.display.innerHTML = this.world.toString();
 	}
 
 	createWorld(options) {
 		const {world, plan, legend} = options;
 		this.world = new world(plan, legend);
+	}
+
+	getWorldDescription(worldN) {
+		const { world, legend } = this.worlds[worldN];
+		return {
+			n: worldN,
+			world: world.description,
+			legend: Object.entries(legend).map(([ch, constr]) => {
+				return [ch, constr.description];
+			})
+		};
 	}
 
 	update(worldN) {
@@ -50,26 +61,11 @@ class Main {
 
 
 const view = new View(worlds.length);
-view.init();
-
 const main = new Main(worlds, view.showData);
-main.init(selectWorld.selectedIndex);
+view.getWorldDescription = main.getWorldDescription;
+
+view.init();
+main.init(getItem('worldIndex') || 0);
 
 const controller = new Controller(main.update, main.run);
 controller.init();
-
-
-getDescription(worlds[selectWorld.selectedIndex]);
-selectWorld.addEventListener('change', (e) => {
-	const ind = e.target.selectedIndex;
-	getDescription(worlds[ind]);
-});
-
-
-function getDescription(worldSchema) {
-	const { world, legend } = worldSchema;
-	console.log(`------------- world #${selectWorld.selectedIndex} -------------`);
-	console.log(world.description);
-	let critters = Object.entries(legend);
-	critters.forEach(([ch, c]) => console.log(`${ch} - ${c.description}`));
-}
