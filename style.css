@@ -37,3 +37,19 @@ body {
 	padding: 5px;
 	cursor: pointer;
 }
+
+.descr-cont {
+	padding: 10px;
+	padding-bottom: 0;
+	background: white;
+	font-size: 0.9em;
+}
+
+.descr-cont h3 {
+	margin: 0;
+}
+
+.descr-cont p span {
+	font-size: 1em;
+	font-weight: bold;
+}
