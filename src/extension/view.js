@@ -25,8 +25,12 @@ export default class View {
 		});
 	}
 
-	showData(data) {
+	showData(data, isNewWorld) {
 		//this.display.innerHTML = data;
+		if (isNewWorld) {
+			this.table.remove();
+			this.table = new Table();
+		}
 		this.table.render(data);
 	}
 

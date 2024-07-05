@@ -23,8 +23,8 @@ class Main {
 		this.updateDisplay();
 	}
 
-	updateDisplay() {
-		this.show(this.world.toString());
+	updateDisplay(isNewWorld) {
+		this.show(this.world.toString(), isNewWorld);
 	}
 
 	createWorld(options) {
@@ -45,7 +45,7 @@ class Main {
 
 	update(worldN) {
 		this.createWorld(this.worlds[worldN]);
-		this.updateDisplay();
+		this.updateDisplay(true);
 	}
 
 	run() {
