@@ -53,8 +53,10 @@ export default class Table {
 		let colInd = 0;
 		let cellsToUpdate = [];
 
+		const critters = Object.keys(this.colors).filter(k => k !== '#');
+
 		for (let i = 0; i < data.length; i += 1) {
-			if (data[i] !== prevData[i]) {
+			if (data[i] !== prevData[i] || critters.includes(data[i])) {
 				cellsToUpdate.push({
 					row: rowInd,
 					col: colInd,
