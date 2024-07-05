@@ -53,3 +53,13 @@ body {
 	font-size: 1em;
 	font-weight: bold;
 }
+
+.table {
+	border-collapse: collapse;
+	font-size: 12px;
+}
+
+.table td {
+	line-height: 1.2;
+	letter-spacing: -3px;
+}

@@ -62,6 +62,7 @@ export default class View {
 
 	createTable(data) {
 		const table = document.createElement('table');
+		table.className = 'table';
 		table.innerHTML = `
 			${data.split('\n').reduce((acc, row) => {
 				return acc + `<tr>
