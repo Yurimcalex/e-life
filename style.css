@@ -14,16 +14,30 @@ body {
   padding: 30px;
 }
 
-.view {
+.view-container {
+	padding: 3px;
 	margin-right: 30px;
-	padding: 10px;
+	background: #E7E7F2;
 	border-radius: 10px;
-	background: white;
+}
+
+.view-container > div {
+	padding: 2px;
+	border: 1px solid lightgray;
+	border-radius: 9px;
+}
+
+.view {
+	padding: 5px;
+	border: 1px solid gray;
+	border-radius: 8px;
 }
 
 .view pre {
 	margin: 0;
 }
+
+
 
 .controls {
 	display: flex;
