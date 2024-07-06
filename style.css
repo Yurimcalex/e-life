@@ -36,7 +36,6 @@ body {
 	margin: 0;
 }
 
-
 .controls {
 	margin-top: 10px;
 	padding: 2px;
@@ -89,25 +88,29 @@ body {
 	border-bottom-left-radius: 5px;
 }
 
-
-
-
-
 .descr-cont {
+	width: 100%;
 	margin-left: 30px;
 	padding: 10px;
 	padding-bottom: 0;
-	background: white;
+	border-radius: 8px;
+	background: #272732;
+	color: gray;
 	font-size: 0.9em;
 }
 
 .descr-cont h3 {
 	margin: 0;
+	padding: 0;
+	text-align: right;
+	font-weight: normal;
+	font-size: 13px;
+	color: #5FCA49;
 }
 
 .descr-cont p span {
 	font-size: 1em;
-	font-weight: bold;
+	color: #D25651;
 }
 
 .table {
