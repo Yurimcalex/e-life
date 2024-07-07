@@ -7,28 +7,34 @@
     <title>E-life</title>
   </head>
   <body>
-    <div class="wrapper">
-      <div>
-        <div class="view-container">
-          <div>
-            <div class="view">
-              <!-- <pre id="world-str"></pre> -->
+    <div class="page">
+      <div class="header">Header</div>
+
+      <div class="wrapper">
+        <div>
+          <div class="view-container">
+            <div>
+              <div class="view">
+                <!-- <pre id="world-str"></pre> -->
+              </div>
+            </div>
+          </div>
+          
+          <div class="controls">
+            <div>
+              <button id="startBtn">Start</button>
+              <button id="stopBtn">Stop</button>
+              <select id="selectWorld"></select>
+              <button id="resetBtn">Reset</button>
+              <button id=restartBtn>Restart</button>
             </div>
           </div>
         </div>
         
-        <div class="controls">
-          <div>
-            <button id="startBtn">Start</button>
-            <button id="stopBtn">Stop</button>
-            <select id="selectWorld"></select>
-            <button id="resetBtn">Reset</button>
-            <button id=restartBtn>Restart</button>
-          </div>
-        </div>
+        <div class="descr-cont"></div>
       </div>
-      
-      <div class="descr-cont"></div>
+
+      <div class="footer">Footer</div>
     </div>
 
     <script type="module" src="/main.js"></script>
