@@ -1,3 +1,5 @@
+@import './src/extension/css/banner.css';
+
 * {
 	box-sizing: border-box;
 }
@@ -134,17 +136,15 @@ body {
 	letter-spacing: -2px;
 }
 
+.header {
+	padding: 30px;
+}
+
 .footer {
 	color: white;
 	padding: 30px;
 	background: gray;
 	margin-top: auto;
-}
-
-.header {
-	color: white;
-	padding: 30px;
-	background: gray;
 }
 
 @media screen and (max-width: 900px) {

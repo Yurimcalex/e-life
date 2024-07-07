@@ -1,0 +1,22 @@
+.banner {
+	color: white;
+}
+
+.banner > div {
+	display: inline-block;
+	padding: 2px;
+	border: 1px solid #CEBF18;
+	border-radius: 50%;
+}
+
+.banner > div span {
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	padding-left: 17px;
+	border-radius: 50%;
+	background: #CEBF18;
+	font-size: 2em;
+	font-weight: bold;
+	line-height: 1.8;
+}
