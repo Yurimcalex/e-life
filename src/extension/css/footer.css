@@ -1,0 +1,10 @@
+.footer {
+	margin-top: auto;
+	padding: 30px;
+	background: #131328;
+	color: white;
+}
+
+.footer .info {
+	font-size: 0.8em;
+} 

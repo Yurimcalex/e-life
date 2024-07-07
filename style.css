@@ -1,5 +1,6 @@
 @import './src/extension/css/banner.css';
 @import './src/extension/css/robots.css';
+@import './src/extension/css/footer.css';
 
 * {
 	box-sizing: border-box;
@@ -139,13 +140,6 @@ body {
 
 .header {
 	padding: 30px;
-}
-
-.footer {
-	color: white;
-	padding: 30px;
-	background: gray;
-	margin-top: auto;
 }
 
 @media screen and (max-width: 900px) {
