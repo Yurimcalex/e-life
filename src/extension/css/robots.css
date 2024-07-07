@@ -1,0 +1,22 @@
+.robot-img-1 {
+	position: absolute;
+	top: 40px;
+	left: 120px;
+	z-index: 1;
+}
+
+.robot-img-1 img {
+	width: 65px;
+	height: 65px;
+}
+
+.robot-img-2 {
+	position: absolute;
+	top: 10px;
+	left: 140px;
+}
+
+.robot-img-2 img {
+	width: 90px;
+	height: 90px;
+}
