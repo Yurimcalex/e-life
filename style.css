@@ -1,4 +1,5 @@
 @import './src/extension/css/banner.css';
+@import './src/extension/css/robots.css';
 
 * {
 	box-sizing: border-box;
