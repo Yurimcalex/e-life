@@ -1,27 +1,29 @@
 import { getItem } from './storage.js';
 import Table from './table.js';
+import Description from './description.js';
 
 export default class View {
 	constructor(worldsAmount) {
 		//this.display = document.getElementById('world-str');
 		this.table = new Table();
+		this.description = new Description();
+
 		this.selectWorld = document.getElementById('selectWorld');
-		this.descrCont = document.querySelector('.descr-cont');
 		this.worldsAmount = worldsAmount;
 
 		this.showData = this.showData.bind(this);
-
 		this.getWorldDescription = null;
 	}
 
 	init() {
 		this._createSelectOptions();
-		this.showDescription(
+		this.description.show(
 			this.getWorldDescription(this.selectWorld.selectedIndex)
 		);
+
 		this.selectWorld.addEventListener('change', (e) => {
 			const descr = this.getWorldDescription(e.target.value);
-			this.showDescription(descr)
+			this.description.show(descr)
 		});
 	}
 
@@ -32,19 +34,6 @@ export default class View {
 			this.table = new Table();
 		}
 		this.table.render(data);
-	}
-
-	showDescription(description) {
-		//this._logDescription(description);
-		const data = `
-			<h3>world #${description.n}</h3>
-			<p>${description.world}</p>
-			<div>
-				${description.legend.reduce((html, [ch, descr]) => 
-					html + `<p><span>${ch}</span> - ${descr}</p>`, '')}
-			</div>
-		`;
-		this.descrCont.innerHTML = data;
 	}
 
 	_logDescription(description) {
