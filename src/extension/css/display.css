@@ -2,6 +2,7 @@
 	padding: 3px;
 	background: #E7E7F2;
 	border-radius: 10px;
+	box-shadow: 0px 0px 41px 10px rgba(0,0,0,1);
 }
 
 .view-container > div {
