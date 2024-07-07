@@ -1,0 +1,31 @@
+.view-container {
+	padding: 3px;
+	background: #E7E7F2;
+	border-radius: 10px;
+}
+
+.view-container > div {
+	padding: 2px;
+	border: 1px solid lightgray;
+	border-radius: 9px;
+}
+
+.view {
+	padding: 5px;
+	border: 1px solid gray;
+	border-radius: 8px;
+}
+
+.view pre {
+	margin: 0;
+}
+
+.table {
+	border-collapse: collapse;
+	font-size: 12px;
+}
+
+.table td {
+	line-height: 1.2;
+	letter-spacing: -2px;
+}
