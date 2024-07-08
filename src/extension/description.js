@@ -8,11 +8,20 @@ export default class Description {
 			<h3>world #${description.n}</h3>
 			<p>${description.world}</p>
 			<div>
-				${description.legend.reduce((html, [ch, descr]) => 
-					html + `<p><span>${ch}</span> - ${descr}</p>`, '')}
+				${description.legend.reduce((html, [ch, descr]) => {
+					html += `<p><span>${ch}</span> - ${this._addLineBreak(descr)}</p>`;
+					return html;
+				}, '')}
 			</div>
 		`;
 		this.container.innerHTML = data;
+	}
+
+	_addLineBreak(descr) {
+		return descr.trim().split('\n').map(str => {
+			if (str.indexOf('<em>') !== -1) return '<br/>' + str;
+			return str;
+		}).join('');
 	}
 
 	_log(description) {
