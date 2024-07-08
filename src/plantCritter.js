@@ -1,6 +1,9 @@
-var description = 'It is like a plant. It can grow and reproduce. ' +
-'It grows only if its energy level is less than 20 points. ' +
-'If its energy level more than 15 points it reproduces.';
+var description = `
+	It is like a plant. It can grow and reproduce.
+	It has 3 - 7 energy points on start.
+	<em>Grow:</em> It grows only if its energy level is less than 20 points. It gets 0.5 point per lifecycle.
+	<em>Reproduce:</em>: If its energy level more than 15 points it reproduces.
+`;
 
 function Plant() {
 	this.energy = 3 + Math.random() * 4;
