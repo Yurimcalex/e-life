@@ -1,13 +1,20 @@
 import PlantEater from '../../plantEaterCritter.js';
 import { randomElement } from '../utils.js';
 
-const description = 'It inherits all the props from Plant Eater and defines its own move action. ' + 
-'If its level of energy less than 20 points it starts looking for food. ' + 
-'When it gets obstacles it changes its direction according to the following rules: ' + 
-'If it was moving horizontally it starts moving vertically in random direction. ' + 
-'If it was moving vertically it starts moving horizontally in random direction. ' + 
-'If by this time there is no direction, then the direction is randomly selected vertical or horizontal.';
 
+const description = `
+	It is a plant eater.
+	It can move, eat and reproduce.
+	It has 20 energy points on start.
+	<em>Eat:</em> It eats plants. When there is a plant somewhere around it then it eats the plant.
+	<em>Move:</em> If its energy level more that 20 it moves in random direction.
+	Otherwise it tries to move west.
+	When it gets obstacles it change its direction according to the following rules:
+	If it was moving horizontally it starts moving vertically in random direction.
+	If it was moving vertically it starts moving horizontally in random direction.
+	If by this time there is no direction, then the direction is randomly selected vertical or horizontal.
+	<em>Reproduce:</em> It gets reproduced if it has more than 60 energy points and there is a free spot.
+`;
 
 class PlantEater2 extends PlantEater {
 	dir = 'w';
