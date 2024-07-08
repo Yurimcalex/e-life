@@ -1,7 +1,11 @@
-var description = 'A plant eater can move, eat and reproduce. ' + 
-'It moves in random direction. ' + 
-'It can eat plants only. ' + 
-'If its energy level more than 60 points and there is a spot it gets reproduced.';
+var description = `
+	It is a plant eater.
+	It can move, eat and reproduce.
+	It has 20 energy points on start.
+	<em>Eat:</em> It eats plants. When there is a plant somewhere around it then it eats the plant.
+	<em>Move:</em> It moves in random direction.
+	<em>Reproduce:</em> It gets reproduced if it has more than 60 energy points and there is a free spot.
+`;
 
 function PlantEater() {
 	this.energy = 20;
