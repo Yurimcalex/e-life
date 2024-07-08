@@ -5,6 +5,7 @@ import { randomElement } from '../utils.js';
 
 
 const description = `
+	It is a plant eater.
 	It can move, eat and reproduce.
 	It has 20 energy points on start.
 	<em>Eat:</em> It eats plants. It eats only if it is hungry - the energy level is less than 80 points.
