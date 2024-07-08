@@ -5,11 +5,12 @@ import Plant from '../../plantCritter.js';
 import PlantEater from '../critters/plantEater2.js';
 import PlantEater4 from '../critters/plantEater4.js';
 import PlantEater5 from '../critters/plantEater5.js';
+import PlantEater6 from '../critters/plantEater6.js';
 import { randomPlaceChar } from '../utils.js';
 
 let plan = [...emptyPlan];
 new Array(10).fill('*').forEach(ch => randomPlaceChar(plan, ch));
-randomPlaceChar(plan, 'e');
+randomPlaceChar(plan, 'E');
 
 export default {
 	plan: plan,
@@ -18,7 +19,8 @@ export default {
 		'#': Wall,
 		'*': Plant,
 		// 'E': PlantEater,
-		//'e': PlantEater4,
-		'e': PlantEater5
+		//'E': PlantEater4,
+		//'E': PlantEater5,
+		'E': PlantEater6
 	}
 };
