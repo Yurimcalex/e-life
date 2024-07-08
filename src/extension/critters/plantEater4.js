@@ -4,10 +4,14 @@ import extend from '../extend.js';
 
 
 const description = `
-	It inherits all the props from Plant Eater and Plant Eater 1 and defines its own move action.
-	It eats only if it is hungry - the energy level is less than 80 points.
-	If its level of energy less than 20 points it starts looking for food.
-	It moves always in one direction if it can. If it gets obstacles than it takes randomly another direction.
+	It is a plant eater.
+	It can move, eat and reproduce.
+	It has 20 energy points on start.
+	<em>Eat:</em> It eats plants. It eats only if it is hungry - the energy level is less than 80 points.
+	<em>Move:</em> If its energy level more that 20 it moves in random direction.
+	Otherwise it moves directly in one direction if it can. Initial direction is north.
+	If it gets obstacles than it takes randomly another direction.
+	<em>Reproduce:</em> It gets reproduced if it has more than 60 energy points and there is a free spot.
 `;
 
 class PlantEater4 extends PlantEater {
