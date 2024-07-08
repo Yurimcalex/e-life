@@ -1,6 +1,6 @@
 import PlantEater from '../../plantEaterCritter.js';
 
-const description = 'It inherits all the props from Plant Eater and defines its own eat action.' + 
+const description = 'It inherits all the props from Plant Eater and defines its own eat action. ' + 
 'It eats only if it is hungry - the energy level is less than 80 points.';
 
 class PlantEater1 extends PlantEater {

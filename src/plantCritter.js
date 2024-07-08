@@ -1,5 +1,5 @@
-var description = 'It is like a plant. It can grow and reproduce.' +
-'It grows only if its energy level is less than 20 points.' +
+var description = 'It is like a plant. It can grow and reproduce. ' +
+'It grows only if its energy level is less than 20 points. ' +
 'If its energy level more than 15 points it reproduces.';
 
 function Plant() {

@@ -2,14 +2,14 @@ import World from './world.js';
 import View from './view.js';
 import { elementFromChar } from './world.js';
 
-var description = 'In this world critters can take 4 actions: move, grow, eat and reproduce' +
-'Every life cycle takes 0.2 point of critters energy.' +
-'If a critter has no energy it is removed from the map.' +
-'To make a move a critter uses 1 energy point.' +
-'If a creature can grow, it gains 0.5 energy points per life cycle.' +
-'If a critter can eat and it meets the other critter that can be eaten'
-'the first one gets all the energy of the second one and the second one is removed from the map.' +
-'If a critter can reproduce and it has twice as much energy as when it just has created it reproduces itself.' + 
+var description = 'In this world critters can take 4 actions: move, grow, eat and reproduce. ' +
+'Every life cycle takes 0.2 point of critters energy. ' +
+'If a critter has no energy it is removed from the map. ' +
+'To make a move a critter uses 1 energy point. ' +
+'If a creature can grow, it gains 0.5 energy points per life cycle. ' +
+'If a critter can eat and it meets the other critter that can be eaten ' +
+'the first one gets all the energy of the second one and the second one is removed from the map. ' +
+'If a critter can reproduce and it has twice as much energy as when it just has created it reproduces itself. ' + 
 'Accordingly, this amount of energy is taken from this critter.';
 
 function LifelikeWorld(map, legend) {
