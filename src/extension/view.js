@@ -1,6 +1,7 @@
 import Table from './table.js';
 import Description from './description.js';
 import Selector from './selector.js';
+import Settings from './settings.js';
 
 export default class View {
 	constructor(worldsAmount) {
@@ -8,6 +9,7 @@ export default class View {
 		this.table = new Table();
 		this.description = new Description();
 		this.select = new Selector(worldsAmount);
+		this.settings = new Settings(this.description.container);
 
 		this.showData = this.showData.bind(this);
 		this.getWorldDescription = null;
