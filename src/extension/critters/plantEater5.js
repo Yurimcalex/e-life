@@ -5,12 +5,14 @@ import { randomInteger } from '../utils.js';
 
 
 const description = `
-	It inherits all the props from Plant Eater and Plant Eater 4 and defines its own reproduce action.
-	It eats only if it is hungry - the energy level is less than 80 points.
-	If its level of energy less than 20 points it starts looking for food.
-	It moves in random direstion and if it's hungry it moves always in one direction if it can.
+	It is a plant eater.
+	It can move, eat and reproduce.
+	It has 20 energy points on start.
+	<em>Eat:</em> It eats plants. It eats only if it is hungry - the energy level is less than 80 points.
+	<em>Move:</em> If its energy level more that 20 it moves in random direction.
+	Otherwise it moves directly in one direction if it can. Initial direction is north.
 	If it gets obstacles than it takes randomly another direction.
-	It gets reproduced if it has more than 60 energy points and there is a free spot.
+	<em>Reproduce:</em> It gets reproduced if it has more than 60 energy points and there is a free spot.
 	It can have from 1 to 3 children.
 `;
 
