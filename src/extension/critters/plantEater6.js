@@ -7,11 +7,11 @@ import { randomElement } from '../utils.js';
 const description = `
 	It can move, eat and reproduce.
 	It has 20 energy points on start.
-	Eat: It eats plants. It eats only if it is hungry - the energy level is less than 80 points.
-	Move: If its energy level more that 20 it moves in random direction.
+	<em>Eat:</em> It eats plants. It eats only if it is hungry - the energy level is less than 80 points.
+	<em>Move:</em> If its energy level more that 20 it moves in random direction.
 	Otherwise it moves directly in one direction until it gets obstacled.
 	Then it tries to select another direction.
-	Reproduce: It gets reproduced if it has more than 60 energy points and there is a free spot.
+	<em>Reproduce:</em> It gets reproduced if it has more than 60 energy points and there is a free spot.
 	It can have from 1 to 3 children.
 `;
 
@@ -45,9 +45,6 @@ class PlantEater6 extends PlantEater {
 		}
 	}
 }
-
-const instance = new PlantEater6();
-
 
 PlantEater6.description = description;
 
