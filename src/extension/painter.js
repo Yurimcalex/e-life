@@ -5,9 +5,14 @@ export default class Painter {
 			'#': 'black',
 			'o': 'gray',
 			'*': 'green',
+			'w': 'blue',
 			'0': 'brown',
+			'A': 'brown',
+			'B': 'brown',
+			'C': 'brown',
 			'D': 'brown',
-			'E': 'brown'
+			'E': 'brown',
+			'F': 'brown'
 		};
 
 		this.tds.forEach(td => this.paintTd(td));
