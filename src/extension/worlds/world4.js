@@ -11,8 +11,14 @@ import PlantEater6 from '../critters/plantEater6.js';
 import { randomPlaceChar } from '../utils.js';
 
 let plan = [...emptyPlan];
-new Array(10).fill('*').forEach(ch => randomPlaceChar(plan, ch));
+new Array(30).fill('*').forEach(ch => randomPlaceChar(plan, ch));
+new Array(5).fill('#').forEach(ch => randomPlaceChar(plan, ch));
 randomPlaceChar(plan, 'A');
+randomPlaceChar(plan, 'B');
+randomPlaceChar(plan, 'C');
+randomPlaceChar(plan, 'D');
+randomPlaceChar(plan, 'E');
+randomPlaceChar(plan, 'F');
 
 export default {
 	plan: plan,
@@ -21,10 +27,10 @@ export default {
 		'#': Wall,
 		'*': Plant,
 		'A': PlantEater1,
-		//'B': PlantEater2,
-		//'C': PlantEater3,
-		//'D': PlantEater4,
-		//'E': PlantEater5,
-		//'F': PlantEater6
+		'B': PlantEater2,
+		'C': PlantEater3,
+		'D': PlantEater4,
+		'E': PlantEater5,
+		'F': PlantEater6
 	}
 };

@@ -8,4 +8,4 @@ import world7 from './world7.js';
 import world8 from './world8.js';
 import world9 from './world9.js';
 
-export default [ world1, world4, world2, world3, world5, world6, world7, world8, world9 ];
+export default [ world1, world2, world3, world5, world6, world7, world8, world9, world4];
