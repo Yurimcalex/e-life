@@ -35,3 +35,8 @@
 	line-height: 1.2;
 	letter-spacing: -2px;
 }
+
+.table td img {
+	height: 17px;
+	width: 17px;
+}
