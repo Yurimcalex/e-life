@@ -9,7 +9,10 @@ export default class View {
 		this.table = new Table();
 		this.description = new Description();
 		this.select = new Selector(worldsAmount);
-		this.settings = new Settings(this.description.container);
+		this.settings = new Settings(
+			this.description.container,
+			this.table
+		);
 
 		this.showData = this.showData.bind(this);
 		this.getWorldDescription = null;
