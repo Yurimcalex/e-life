@@ -36,13 +36,15 @@ body {
 	margin-top: 20px;
 	padding: 2px;
 	border: 1px solid #292971;
-	border-radius: 6px 6px 95px 95px / 6px 6px 23px 23px;
+	/*border-radius: 6px 6px 95px 95px / 6px 6px 23px 23px;*/
+	border-radius: 5px;
 	box-shadow: 8px 10px 14px 0px rgba(0,0,0,0.75);
 }
 
 .controls > div {
 	display: flex;
-	border-radius: 5px 5px 95px 95px / 5px 5px 20px 20px;
+	/*border-radius: 5px 5px 95px 95px / 5px 5px 20px 20px;*/
+	border-radius: 5px;
 	overflow: hidden;
 }
 
@@ -50,7 +52,7 @@ body {
 	flex: 1;
 	margin: 0;
 	padding: 0;
-	padding-bottom: 7px;
+	/*padding-bottom: 7px;*/
 	border: none;
 	font-size: 0.75em;
 }
@@ -63,7 +65,7 @@ body {
 
 .controls select {
 	margin: -1px 0;
-	padding: 5px 0px;
+	/*padding: 5px 0px;*/
 	outline: none;
 	font-size: 0.8em;
 	cursor: pointer;
@@ -74,14 +76,14 @@ body {
 }
 
 #stopBtn {
-	padding-top: 6px;
+	/*padding-top: 6px;*/
 	border-right: 1px solid #0D0D1A;
 	border-top-right-radius: 5px;
 	border-bottom-right-radius: 5px;
 }
 
 #resetBtn {
-	padding-top: 6px;
+	/*padding-top: 6px;*/
 	border-left: 1px solid #0D0D1A;
 	border-top-left-radius: 5px;
 	border-bottom-left-radius: 5px;
