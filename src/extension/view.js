@@ -33,6 +33,7 @@ export default class View {
 		if (isNewWorld) {
 			this.table.remove();
 			this.table = new Table();
+			this.settings.appScreen = this.table;
 		}
 		this.table.render(data);
 	}
