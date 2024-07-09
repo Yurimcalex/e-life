@@ -7,6 +7,8 @@ import cow1 from './img/cow1.png';
 import cow2 from './img/cow2.png';
 import cow3 from './img/cow3.png';
 import cow4 from './img/cow4.png';
+import sheep1 from './img/sheep1.png';
+import sheep2 from './img/sheep2.png';
 
 
 
@@ -23,8 +25,8 @@ export default class SymbolMapper {
 			'B': cow2,
 			'C': cow3,
 			'D': cow4,
-			'E': cow0,
-			'F': cow0
+			'E': sheep1,
+			'F': sheep2
 		};
 
 		this.map();
