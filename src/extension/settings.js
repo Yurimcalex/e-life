@@ -5,6 +5,9 @@ export default class Settings {
 		this.appScreen = appScreen;
 
 		this.menu.addEventListener('click', (e) => {
+			let li = e.target;
+			if (li.tagName !== 'LI') return;
+			
 			const action = e.target.dataset.action;
 			if (action) {
 				this[action](e);
