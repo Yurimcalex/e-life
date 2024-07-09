@@ -5,7 +5,7 @@ export default class Description {
 
 	show(description) {
 		const data = `
-			<h3>world #${description.n}</h3>
+			<h3><em>Description</em><span>world #${description.n}</span></h3>
 			<p>${description.world}</p>
 			<div>
 				${description.legend.reduce((html, [ch, descr]) => {

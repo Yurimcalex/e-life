@@ -95,12 +95,19 @@ body {
 }
 
 .descr-cont h3 {
+	display: flex;
+	justify-content: space-between;
 	margin: 0;
 	padding: 0;
 	text-align: right;
 	font-weight: normal;
 	font-size: 13px;
 	color: #5FCA49;
+}
+
+.descr-cont h3 em {
+	font-size: 0.9em;
+	color: #535374;
 }
 
 .descr-cont p span {
