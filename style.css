@@ -31,7 +31,9 @@ body {
 }
 
 .controls {
-	margin-top: 10px;
+	width: 300px;
+	margin: auto;
+	margin-top: 20px;
 	padding: 2px;
 	border: 1px solid #292971;
 	border-radius: 6px 6px 95px 95px / 6px 6px 23px 23px;
