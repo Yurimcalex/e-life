@@ -31,7 +31,7 @@ body {
 }
 
 .controls {
-	width: 300px;
+	/*width: 300px;*/
 	margin: auto;
 	margin-top: 20px;
 	padding: 2px;
@@ -50,9 +50,9 @@ body {
 	flex: 1;
 	margin: 0;
 	padding: 0;
-	padding-bottom: 10px;
+	padding-bottom: 7px;
 	border: none;
-	font-size: 0.8em;
+	font-size: 0.75em;
 }
 
 .controls button:hover {
@@ -63,24 +63,26 @@ body {
 
 .controls select {
 	margin: -1px 0;
-	padding: 10px 0px;
+	padding: 5px 0px;
 	outline: none;
 	font-size: 0.8em;
 	cursor: pointer;
 }
 
 #startBtn, #resetBtn {
-	border-right: 1px solid #0D0D1A;;
+	border-right: 2px solid #0D0D1A;
 }
 
 #stopBtn {
 	padding-top: 6px;
+	border-right: 1px solid #0D0D1A;
 	border-top-right-radius: 5px;
 	border-bottom-right-radius: 5px;
 }
 
 #resetBtn {
 	padding-top: 6px;
+	border-left: 1px solid #0D0D1A;
 	border-top-left-radius: 5px;
 	border-bottom-left-radius: 5px;
 }
