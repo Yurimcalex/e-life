@@ -11,10 +11,9 @@ import sheep1 from './img/sheep1.png';
 import sheep2 from './img/sheep2.png';
 
 
-
-export default class SymbolMapper {
+class SymbolMapper {
 	constructor(cells) {
-		this.cells = [...cells];
+		this.cells = cells && [...cells];
 		this.icons = {
 			'#': stone,
 			'o': ghost,
@@ -29,7 +28,7 @@ export default class SymbolMapper {
 			'F': sheep2
 		};
 
-		this.map();
+		if (cells) this.map();
 	}
 
 	_createImgStr(src) {
@@ -45,8 +44,14 @@ export default class SymbolMapper {
 		});
 	}
 
+	getIconUrl(ch) {
+		return this.icons[ch];
+	}
+
 	render() {
 		const cells = this.cells.filter(cell => cell.dataset.text !== '#');
 		this.map(cells);
 	}
 }
+
+export default SymbolMapper;
