@@ -1,13 +1,14 @@
 import Painter from './painter.js';
 import SymbolMapper from './symbolMapper.js';
 
+let displayMethod = Painter;
+
 export default class Table {
 	constructor() {
 		this.container = document.querySelector('.view');
 		this.table = null;
 		this.data = '';
-		this.painter = null;
-		this.mapper = null;
+		this.displayEnhancer = null;
 	}
 
 	createTable(data) {
@@ -17,7 +18,7 @@ export default class Table {
 			${data.split('\n').reduce((acc, row) => {
 				return acc + `<tr>
 					${row.split('').reduce((acc, cell) => {
-						return acc + `<td>${cell}</td>`;
+						return acc + `<td data-text=${cell}>${cell}</td>`;
 					}, '')}
 				</tr>` 
 			}, '')}
@@ -26,8 +27,8 @@ export default class Table {
 		this.table = table;
 		this.data = data;
 		this.container.append(table);
-		//this.painter = new Painter(table.querySelectorAll('td'));
-		this.mapper = new SymbolMapper(table.querySelectorAll('td'));
+
+		this.displayEnhancer = new displayMethod(table.querySelectorAll('td'));
 	}
 
 	updateTable(data) {
@@ -37,10 +38,23 @@ export default class Table {
 			const {row, col, text} = cd;
 			const td = rows[row].cells[col];
 			td.textContent = text;
+			td.setAttribute('data-text', text);
 		});
 		this.data = data;
-		//this.painter.paint(data.split('\n').join(''));
-		this.mapper.render();
+
+		this.displayEnhancer.render();
+	}
+
+	toggleDisplayMethod() {
+		if (displayMethod === Painter) {
+			displayMethod = SymbolMapper;
+		} else {
+			displayMethod = Painter;
+		}
+
+		const cells = this.table.querySelectorAll('td')
+		this.displayEnhancer = new displayMethod(cells);
+		this.displayEnhancer.render()
 	}
 
 	_getCellsToUpdate(prevData, data) {
