@@ -7,10 +7,10 @@ import { replaceChar } from '../utils.js';
 
 export default {
 	world: world,
-	plan: replaceChar([...plan], '0', 'D'),
+	plan: replaceChar([...plan], '0', 'A'),
 	legend: {
 		'#': Wall,
-		'D': PlantEater,
+		'A': PlantEater,
 		'*': Plant
 	}
 };

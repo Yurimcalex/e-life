@@ -6,11 +6,11 @@ import Plant from '../../plantCritter.js';
 import { replaceChar } from '../utils.js';
 
 export default {
-	plan: replaceChar([...plan], '0', 'E'),
+	plan: replaceChar([...plan], '0', 'C'),
 	world,
 	legend: {
 		'#': Wall,
-		'E': PlantEater,
+		'C': PlantEater,
 		'*': Plant
 	}
 };
