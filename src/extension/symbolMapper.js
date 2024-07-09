@@ -26,7 +26,7 @@ export default class SymbolMapper {
 
 	map() {
 		this.cells.forEach(cell => {
-			const ch = cell.textContent;
+			const ch = cell.dataset.text;
 			if (ch in this.icons) {
 				cell.innerHTML = this._createImgStr(this.icons[ch]);
 			}
@@ -34,7 +34,7 @@ export default class SymbolMapper {
 	}
 
 	render() {
-		const cells = this.cells.filter(cell => cell.textContent !== '#');
+		const cells = this.cells.filter(cell => cell.dataset.text !== '#');
 		this.map(cells);
 	}
 }
