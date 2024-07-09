@@ -1,6 +1,9 @@
+import SymbolMapper from './symbolMapper.js';
+
 export default class Description {
 	constructor() {
 		this.container = document.querySelector('.descr-cont');
+		this.mapper = new SymbolMapper();
 	}
 
 	show(description) {
@@ -9,7 +12,7 @@ export default class Description {
 			<p>${description.world}</p>
 			<div>
 				${description.legend.reduce((html, [ch, descr]) => {
-					html += `<p><span>${ch}</span> - ${this._addLineBreak(descr)}</p>`;
+					html += `<p>Symbol <span>${ch}</span> Icon <img src="${this.mapper.getIconUrl(ch)}"/> - ${this._addLineBreak(descr)}</p>`;
 					return html;
 				}, '')}
 			</div>

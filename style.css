@@ -122,6 +122,11 @@ body {
 	color: #5FCA49;
 }
 
+.descr-cont p img {
+	height: 17px;
+	width: 17px;
+}
+
 .header {
 	display: flex;
 	justify-content: space-between;
