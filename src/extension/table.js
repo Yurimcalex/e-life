@@ -1,4 +1,5 @@
 import Painter from './painter.js';
+import SymbolMapper from './symbolMapper.js';
 
 export default class Table {
 	constructor() {
@@ -6,6 +7,7 @@ export default class Table {
 		this.table = null;
 		this.data = '';
 		this.painter = null;
+		this.mapper = null;
 	}
 
 	createTable(data) {
@@ -24,7 +26,8 @@ export default class Table {
 		this.table = table;
 		this.data = data;
 		this.container.append(table);
-		this.painter = new Painter(table.querySelectorAll('td'));
+		//this.painter = new Painter(table.querySelectorAll('td'));
+		this.mapper = new SymbolMapper(table.querySelectorAll('td'));
 	}
 
 	updateTable(data) {
@@ -36,7 +39,8 @@ export default class Table {
 			td.textContent = text;
 		});
 		this.data = data;
-		this.painter.paint(data.split('\n').join(''));
+		//this.painter.paint(data.split('\n').join(''));
+		this.mapper.render();
 	}
 
 	_getCellsToUpdate(prevData, data) {
