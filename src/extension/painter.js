@@ -14,13 +14,14 @@ export default class Painter {
 	}
 
 	paintTd(td) {
-		const key = td.textContent;
+		const key = td.dataset.text;
+		td.innerHTML = key;
 		if (key in this.colors) {
 			td.style.color = this.colors[key];
 		}
 	}
 
-	paint(data) {
+	render() {
 		this.tds.forEach(td => {
 			td.style.color = '';
 			this.paintTd(td);
